@@ -1,0 +1,241 @@
+.announcement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--bg-dark);
+    color: var(--text-on-dark);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1001;
+}
+
+.announcementBadge {
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.announcementArrow {
+    opacity: 0.5;
+}
+
+.nav {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    max-width: 720px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s var(--ease-out);
+}
+
+.scrolled {
+    top: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.navInner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 8px 8px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.logoIcon {
+    display: flex;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.logoText {
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.navLink {
+    padding: 8px 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.navLink:hover {
+    color: var(--text-primary);
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 8px;
+}
+
+.loginLink {
+    color: var(--text-secondary);
+}
+
+.dropdownWrapper {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-xl);
+    padding: 8px;
+    min-width: 220px;
+    z-index: 100;
+    animation: dropdownIn 0.2s var(--ease-out);
+}
+
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: background 0.15s;
+    text-decoration: none;
+}
+
+.dropdownItem:hover {
+    background: var(--bg-primary);
+}
+
+.dropdownIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+    color: var(--text-secondary);
+}
+
+.mobileToggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.mobileMenu {
+    display: none;
+    flex-direction: column;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.mobileLink {
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+}
+
+.mobileCtas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        left: 16px;
+        right: 16px;
+        transform: none;
+        max-width: none;
+        border-radius: var(--radius-xl);
+    }
+
+    .scrolled {
+        left: 8px;
+        right: 8px;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .navActions {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .mobileMenu {
+        display: flex;
+    }
+}
