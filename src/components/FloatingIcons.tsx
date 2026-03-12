@@ -61,26 +61,18 @@ export default function FloatingIcons() {
                     </motion.div>
                 ))}
 
-                <motion.div
-                    className={styles.centerStats}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={
-                        isInView
-                            ? { opacity: 1, scale: 1 }
-                            : { opacity: 0, scale: 0.8 }
-                    }
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                    <h2 className={styles.statsTitle}>A growing library of</h2>
-                    <div className={styles.statsGrid}>
-                        {stats.map((stat) => (
-                            <div key={stat.label} className={styles.statItem}>
-                                <span className={styles.statValue}>{stat.value}</span>
-                                <span className={styles.statLabel}>{stat.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
+                <div className={styles.centerContent}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <h2 className="text-display" style={{ marginBottom: "16px" }}>Integrated <span className="gradient-text">Ecosystem</span></h2>
+                        <p className="text-body-lg">
+                            All your essential business tools in one unified platform. Connect seamlessly, operate efficiently, and scale operations without friction.
+                        </p>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

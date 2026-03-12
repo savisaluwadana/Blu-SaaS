@@ -58,46 +58,17 @@
 
 
 
-.centerStats {
+.centerContent {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2;
-}
-
-.statsTitle {
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-}
-
-.statsGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.statItem {
-    display: flex;
-    flex-direction: column;
-}
-
-.statValue {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    color: var(--text-primary);
-}
-
-.statLabel {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font-weight: 500;
-    color: var(--text-tertiary);
-    letter-spacing: -0.01em;
+    width: 100%;
+    max-width: 600px;
+    z-index: 10;
+    pointer-events: none;
+    padding: 0 24px;
 }
 
 @media (max-width: 768px) {

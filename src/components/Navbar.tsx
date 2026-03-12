@@ -84,7 +84,6 @@ export default function Navbar() {
                     </div>
 
                     <div className={styles.navActions}>
-                        <button className={`${styles.navLink} ${styles.loginLink}`}>Log in</button>
                         <button className="btn btn-primary btn-sm">Get Started</button>
                     </div>
 
@@ -113,7 +112,6 @@ export default function Navbar() {
                             Testimonials
                         </a>
                         <div className={styles.mobileCtas}>
-                            <button className="btn btn-secondary" style={{ width: "100%" }}>Log in</button>
                             <button className="btn btn-primary" style={{ width: "100%" }}>Get Started</button>
                         </div>
                     </div>

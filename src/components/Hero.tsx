@@ -20,15 +20,6 @@ export default function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.heroContent}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className={styles.heroBadge}
-                >
-                    <Sparkles size={14} />
-                    <span>Trusted by 500+ enterprises worldwide</span>
-                </motion.div>
 
                 <motion.div
                     className={styles.heroIconStack}
@@ -97,27 +88,6 @@ export default function Hero() {
                     </a>
                 </motion.div>
 
-                <motion.div
-                    className={styles.trustedBy}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                >
-                    <span className={styles.trustedLabel}>Trusted by teams at</span>
-                    <div className={styles.trustedLogos}>
-                        {[
-                            "Accenture",
-                            "Deloitte",
-                            "McKinsey",
-                            "SAP",
-                            "Oracle",
-                        ].map((name) => (
-                            <div key={name} className={styles.trustedLogo}>
-                                {name}
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

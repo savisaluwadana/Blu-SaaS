@@ -1,0 +1,128 @@
+.section {
+    padding: 120px 0;
+    position: relative;
+    background-color: var(--bg-dark);
+    color: var(--text-on-dark);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Background grid pattern */
+.section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--border-dark) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-dark) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: center;
+    opacity: 0.2;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+    z-index: -1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    grid-column: span 6;
+    border-radius: var(--radius-2xl);
+    padding: 1px;
+    overflow: hidden;
+    background: var(--bg-dark-secondary);
+    transition: transform 0.4s var(--ease-out);
+}
+
+.card:nth-child(1),
+.card:nth-child(4) {
+    grid-column: span 7;
+}
+
+.card:nth-child(2),
+.card:nth-child(3) {
+    grid-column: span 5;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.cardInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    min-height: 240px;
+    padding: 40px;
+    background: rgba(20, 20, 22, 0.95);
+    border-radius: calc(var(--radius-2xl) - 1px);
+    z-index: 2;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.description {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-on-dark-secondary);
+}
+
+.glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out);
+    z-index: 1;
+    filter: blur(40px);
+}
+
+.card:hover .glow {
+    opacity: 0.15;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .header {
+        margin-bottom: 56px;
+    }
+
+    .card {
+        grid-column: span 12 !important;
+    }
+
+    .cardInner {
+        min-height: 200px;
+        padding: 32px;
+    }
+}
