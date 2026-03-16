@@ -133,6 +133,15 @@
     animation: dropdownIn 0.2s var(--ease-out);
 }
 
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+}
+
 @keyframes dropdownIn {
     from {
         opacity: 0;
