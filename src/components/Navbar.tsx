@@ -80,7 +80,6 @@ export default function Navbar() {
                         </div>
                         <a href="#products" className={styles.navLink}>Products</a>
                         <a href="#features" className={styles.navLink}>Features</a>
-                        <a href="#testimonials" className={styles.navLink}>Testimonials</a>
                     </div>
 
                     <div className={styles.navActions}>
@@ -107,9 +106,6 @@ export default function Navbar() {
                         </a>
                         <a href="#features" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
                             Features
-                        </a>
-                        <a href="#testimonials" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>
-                            Testimonials
                         </a>
                         <div className={styles.mobileCtas}>
                             <button className="btn btn-primary" style={{ width: "100%" }}>Get Started</button>
